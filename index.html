@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Evening Walk</title>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+
+            <a-camera position="0 8 16"></a-camera>
+
+            <!--Preload-->
+            <a-assets timeout="10000">
+                <a-asset-item id="bench" src="./models/bench/scene.gltf"></a-asset-item>
+                <a-asset-item id="lamp" src="./models/street_lamp/scene.gltf"></a-asset-item>
+                <a-asset-item id="boy" src="./models/boy/scene.gltf"></a-asset-item>
+                <a-asset-item id="dog" src="./models/dog/scene.gltf"></a-asset-item>
+                <a-asset-item id="street" src="./models/street.gltf"></a-asset-item>
+            </a-assets>
+
+            <!-- Background -->
+            <a-box
+                src="https://raw.githubusercontent.com/shivjain123/Evening-Walk/master/night%20sky.jpg"
+                position="0 3.5 -3.5"
+                width="66"
+                height="40"
+            >
+            </a-box>
+
+            <a-entity light="type: ambient;"> </a-entity>
+
+            <a-plane width="43" length="90" rotation="-90 0 0" position="0 2 0" src="#street"></a-plane>
+            <a-plane width="43" length="90" rotation="-90 0 0" position="0 2 1" src="#street"></a-plane>
+            <a-plane width="43" length="90" rotation="-90 0 0" position="0 2 2" src="#street"></a-plane>
+            <a-plane width="43" length="90" rotation="-90 0 0" position="0 2 3" src="#street"></a-plane>
+
+            <!-- Street Lamps -->
+            <a-entity
+                scale="1 1 0.6"
+                gltf-model="#lamp"
+                position="-21 1.7 -0.5"
+                shadow="cast:true"
+            ></a-entity>
+            <a-entity
+                scale="1 1 0.6"
+                gltf-model="#lamp"
+                position="21 3 1"
+                shadow="cast:true"
+            ></a-entity>
+
+            <!-- Benches -->
+            <a-entity
+                scale="1 1 1"
+                gltf-model="#bench"
+                position="-16 2.5 10.3"
+                shadow="cast:true"
+            ></a-entity>
+            <a-entity
+                scale="1 1 1"
+                gltf-model="#bench"
+                position="9 2.5 10.3"
+                shadow="cast:true"
+            ></a-entity>
+
+            <!-- Boy -->
+            <a-entity
+                scale="1.4 1.4 1.4"
+                gltf-model="#boy"
+                position="-2 4 5"
+                shadow="cast:true"
+            ></a-entity>
+
+            <!-- Dog -->
+            <a-entity
+                scale="1.4 1.4 1.4"
+                gltf-model="#dog"
+                position="3 4.7 4.5"
+                shadow="cast:true"
+            ></a-entity>
+        </a-scene>
+    </body>
+</html>
